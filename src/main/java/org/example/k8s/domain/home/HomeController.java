@@ -4,6 +4,9 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.net.InetAddress;
+import java.net.UnknownHostException;
+
 @RestController
 public class HomeController {
     @Value("${custom.jwt.secretKey}")
@@ -11,8 +14,11 @@ public class HomeController {
 
 
     @GetMapping("/")
-    public String home(){
-        return "Hello, World!";
+    public String showMain() throws UnknownHostException {
+        InetAddress localHost = InetAddress.getLocalHost();
+        // getHostName 메소드를 호출하여 호스트 이름을 얻습니다.
+        String hostname = localHost.getHostName();
+        return "home, hostname : " + hostname;
     }
 
     @GetMapping("/jwtSecretKey")
