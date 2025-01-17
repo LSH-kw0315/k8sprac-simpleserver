@@ -79,4 +79,4 @@ jobs:
         env:
           OWNER: '${{ github.repository_owner }}'
       - run: |
-          kubectl set image deployment/k8sprac-simpleserver=ghcr.io/${{ env.OWNER_LC }}/k8sprac-simpleserver:${{ needs.makeTagAndRelease.outputs.tag_name }}
+          kubectl set image deployment/k8sprac-simpleserver k8sprac-simpleserver=ghcr.io/${{ env.OWNER_LC }}/k8sprac-simpleserver:${{ needs.makeTagAndRelease.outputs.tag_name }}
