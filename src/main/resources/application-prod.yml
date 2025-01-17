@@ -13,7 +13,7 @@ spring:
       host: redis-1-service
       port: 6379
   datasource:
-    url: jdbc:mysql://mysql-1-service:3306/sb_prod
+    url: jdbc:mysql://mysql-1-service:3306/sb_k8s_prod
     username: llddlocal
     password: 1234
     driver-class-name: com.mysql.cj.jdbc.Driver
