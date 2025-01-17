@@ -40,3 +40,12 @@ logging:
     org.hibernate.orm.jdbc.bind: TRACE
     org.hibernate.orm.jdbc.extract: TRACE
     org.springframework.transaction.interceptor: TRACE
+
+management:
+  endpoint:
+    health:
+      group:
+        readiness:
+          show-components: always
+        liveness:
+          show-components: always
